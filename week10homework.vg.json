@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Reported Shapes of Sighted UFOs",
+    "width": 1000,
+    "height": 600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/ufo_shapes_without_unknowns.csv"
+    },
+    "params": [{
+            "name": "Min_Sightings",
+            "value": 0,
+            "bind": {
+                    "input": "range",
+                    "min": 0,
+                    "max": 5000,
+                    "step": 500,
+                    "name": "Minimum Sightings"
+            }
+        }],
+    "layer": [{
+        "mark": "bar",
+        "encoding": {
+            "x": {"field": "count", "type": "quantitative"},
+            "y": {"field": "shape", "type": "nominal", "sort":{
+                "field":"count", 
+                "order": "descending"}
+            },
+                "tooltip": [
+                    {"field": "shape", "title": "Shape"},
+                    {"field": "count", "title": "Total Sightings Worldwide"}
+                ] 
+        },
+        "transform": [{"filter": "datum.count > Min_Sightings"}]
+    },
+    {"data":{
+        "values": [{}]
+    },
+    "encoding": {
+        "x": {"datum": 5024}
+    },
+    "layer": [{
+        "mark": "rule"
+    }, {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "bottom",
+          "dx": 610,
+          "dy": 260,
+          "x": "width",
+          "size": 15,
+          "text": "The Light Shape is by far the most viewed UFO shape, with over 10,000 reported sightings."
+        }
+  
+    },
+    {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "bottom",
+          "dx": 610,
+          "dy": 290,
+          "size": 15,
+          "x": "width",
+          "text": "The next most reported shape, the Circle, has around half the reported sightings of Light."
+        }
+    }
+    ]
+    }
+    ]
+
+        
+        
+    
+}
