@@ -25,7 +25,7 @@
                 "field":"count", 
                 "order": "descending"}
             },
-            "color": {"#aa4326"},
+            "color": {"value": "#aa4326"},
                 "tooltip": [
                     {"field": "shape", "title": "Shape"},
                     {"field": "count", "title": "Total Sightings Worldwide"}
