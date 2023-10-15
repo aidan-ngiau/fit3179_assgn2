@@ -1,6 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Reported UFO Sightings Worldwide from 2005-2014",
+    "title": {
+      "text": "Reported UFO Sightings Worldwide from 2005-2014",
+      "subtitle": "1 emoji = 5 mentions",
+      "fontSize": 21,
+      "subtitleFontSize": 16
+    },
     "width": 1000,
     "height": 400,
     "projection": {"type": "equalEarth"},

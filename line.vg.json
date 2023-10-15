@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Number of UFO Sightings Worldwide per Year",
+        "subtitle": "Data from 2005 - 2014",
+        "fontSize": 21,
+        "subtitleFontSize": 16
+      },
+    "data": {
+        "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/yearly_sightings.csv"
+    },
+    "width": 1000,
+    "height": 600,
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "year", "type": "temporal", "title": "Year"},
+      "y": {"field": "Count", "type": "quantitative", "title": "Number of Sightings Reported"}
+    },
+    "config": {
+        "axisX": {"labelOverlap": "parity", "tickCount": 10, "labelExpr": "year(datum.value)"}
+      }
+  }
