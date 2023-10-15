@@ -15,7 +15,7 @@
         "encoding": {
           "x": {"field": "datetime", "type": "temporal", "title": "Date"},
           "y": {"field": "Count", "type": "quantitative", "title": "UFO Sightings Reported"},
-          "color": {"value": "#ff6962"},
+          "color": {"value": "#5a5a5a"},
           "tooltip": [
             {"field": "datetime", "type": "temporal", "title": "Date"},
             {"field": "Count", "type": "quantitative", "title": "Sightings Reported"}
@@ -29,7 +29,7 @@
         "mark": {
           "type": "point",
           "filled": true,
-          "color": "black",
+          "color": "#ff0000",
           "size": 60
         },
         "encoding": {
