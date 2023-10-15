@@ -2,8 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": "Reported Shapes of Sighted UFOs",
-        "fontSize": 21,
-        "subtitleFontSize": 16
+        "fontSize": 21
     },
     "width": 1000,
     "height": 600,
