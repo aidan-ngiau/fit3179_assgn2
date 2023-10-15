@@ -1,6 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Most Mentioned Animals in UFO Sighting Reports",
+    "title": {
+        "text": "Most Mentioned Animals in UFO Sighting Reports",
+        "subtitle": "1 emoji = 5 mentions",
+        "fontSize": 21,
+        "subtitleFontSize": 16
+      },
     "data": {
         "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/animal_counts.csv"
     },
@@ -13,8 +18,9 @@
         },
         {"window": [{"op": "rank", "as": "rank"}], "groupby": ["word"]}
       ],
-      "mark": {"type": "text", "baseline": "middle"},
-      "encoding": {
+    
+    "mark": {"type": "text", "baseline": "middle"},
+    "encoding": {
         "x": {"field": "rank", "type": "ordinal", "axis": null},
         "y": {"field": "word", "type": "nominal", "axis": null},
         "row": {"field": "word", "header": {"title": ""}, "sort": {
@@ -22,5 +28,6 @@
         }},
         "text": {"field": "emoji", "type": "nominal"},
         "size": {"value": 40}
-      }
     }
+}
+    
