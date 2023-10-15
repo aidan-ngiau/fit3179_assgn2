@@ -13,7 +13,11 @@
     "encoding": {
       "x": {"field": "year", "type": "temporal", "title": "Year"},
       "y": {"field": "Count", "type": "quantitative", "title": "Number of Sightings Reported"},
-      "color": {"value": "#aa4326"}
+      "color": {"value": "#aa4326"},
+      "tooltip": [
+        {"field": "year", "type": "temporal", "title": "Year"},
+        {"field": "count", "type": "quantitative", "title": "UFO Sightings Reported"}
+      ]
     },
     "config": {
         "axisX": {"labelOverlap": "parity", "tickCount": 10, "labelExpr": "year(datum.value)"}

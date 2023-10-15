@@ -29,5 +29,6 @@
         "text": {"field": "emoji", "type": "nominal"},
         "size": {"value": 40}
     }
+    
 }
     
