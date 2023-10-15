@@ -10,7 +10,7 @@ vegaEmbed("#homework_week9_chart", vg_2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-vegaEmbed("#isotope_chart", vg_2).then(function(result) {
+vegaEmbed("#isotope_chart", vg_3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
