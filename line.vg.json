@@ -15,7 +15,7 @@
       "y": {"field": "Count", "type": "quantitative", "title": "Number of Sightings Reported"},
       "color": {"value": "#aa4326"},
       "tooltip": [
-        {"field": "year", "type": "temporal", "title": "Year"},
+        {"field": "year", "type": "quantitative", "title": "Year"},
         {"field": "count", "type": "quantitative", "title": "UFO Sightings Reported"}
       ]
     },
