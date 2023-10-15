@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "Number of UFO Sightings Worldwide per Year",
+        "text": "UFO Sightings Reported Over Time",
         "fontSize": 21
       },
     "data": {
@@ -13,8 +13,8 @@
       {
         "mark": {"type": "line"},
         "encoding": {
-          "x": {"field": "datetime", "type": "temporal"},
-          "y": {"field": "Count", "type": "quantitative"},
+          "x": {"field": "datetime", "type": "temporal", "title": "Date"},
+          "y": {"field": "Count", "type": "quantitative", "title": "UFO Sightings Reported"},
           "color": {"value": "#ff6962"},
           "tooltip": [
             {"field": "datetime", "type": "temporal", "title": "Date"},
