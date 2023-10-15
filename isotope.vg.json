@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Reported Shapes of Sighted UFOs",
+    "width": 2000,
+    "height": 600,
+    "data": {
+        "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/animal_counts.csv"
+    },
+    "transform": [
+        {
+            "calculate": "{'cow': '🐄', 'dog': '🐕', 'bird': '🐦', 'horse': '🐎', 'cat': '🐈', 'sheep': '🐖', 'goat': '🐐', 'pig': '🐖' }[datum.word]",
+            "as": "emoji"
+        },
+        {"window": [{"op": "rank", "as": "rank"}], "groupby": ["word"]}
+      ],
+      "mark": {"type": "text", "baseline": "middle"},
+      "encoding": {
+        "x": {"field": "rank", "type": "ordinal", "axis": null},
+        "y": {"field": "word", "type": "nominal", "axis": null, "sort": null},
+        "row": {"field": "word", "header": {"title": ""}},
+        "text": {"field": "emoji", "type": "nominal"},
+        "size": {"value": 25}
+      }
+    }
