@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Reported Shapes of Sighted UFOs",
+    "title": "Most Mentioned Animals in UFO Sighting Reports",
     "width": 2000,
     "height": 600,
     "data": {
