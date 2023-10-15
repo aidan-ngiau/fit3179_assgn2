@@ -9,17 +9,37 @@
     },
     "width": 1000,
     "height": 600,
-    "mark": "line",
-    "encoding": {
-      "x": {"field": "year", "type": "temporal", "title": "Year"},
-      "y": {"field": "Count", "type": "quantitative", "title": "Number of Sightings Reported"},
-      "color": {"value": "#aa4326"},
-      "tooltip": [
-        {"field": "year", "type": "quantitative", "title": "Year"},
-        {"field": "count", "type": "quantitative", "title": "UFO Sightings Reported"}
-      ]
-    },
-    "config": {
-        "axisX": {"labelOverlap": "parity", "tickCount": 10, "labelExpr": "year(datum.value)"}
+    "layer": [
+      {
+        "mark": {"type": "line"},
+        "encoding": {
+          "x": {"field": "datetime", "type": "temporal"},
+          "y": {"field": "Count", "type": "quantitative"},
+          "color": {"value": "#ff6962"},
+          "tooltip": [
+            {"field": "datetime", "type": "temporal", "title": "Date"},
+            {"field": "Count", "type": "quantitative", "title": "Sightings Reported"}
+        ] 
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/4th_july_sightings.csv"
+      },
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "color": "black",
+          "size": 60
+        },
+        "encoding": {
+          "x": {"field": "datetime", "type": "temporal"},
+          "y": {"field": "Count", "type": "quantitative"},
+          "tooltip": [
+            {"field": "datetime", "type": "temporal", "title": "Date"},
+            {"field": "Count", "type": "quantitative", "title": "Sightings Reported"}
+        ] 
+        }
       }
+    ]
   }
