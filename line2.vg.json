@@ -1,0 +1,111 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "UFO Sightings over 10 Years",
+    "data": {
+        "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/sightings_over_time_country.csv"
+    },
+    "params": [
+        {
+            "name": "country_selection",
+            "bind":{
+                "input": "select",
+                "options": [
+                    null,
+                    "us",
+                    "ca",
+                    "gb",
+                    "de",
+                    "au"
+                ],
+                "labels": [
+                    "Show All",
+                    "United States",
+                    "Canada",
+                    "Great Britain",
+                    "Germany",
+                    "Australia"
+                ],
+                "name": "Country Selection"
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "country_selection == null || datum.country == country_selection"
+        }
+    ],
+    "width": 1000,
+    "height": 600,
+    "encoding": {"x": {"field": "datetime", "type": "temporal", "axis": {"format": "%b %Y"}, "title": "Date"}},
+    "layer": [
+      {
+        "encoding": {
+          "y": {"field": "count", "type": "quantitative", "title": "Sightings Reported"},
+          "color": {
+            "field": "country",
+            "type": "nominal",
+            "title": "Country",
+            "scale": {
+              "domain": ["au", "us", "ca", "gb", "de"],  
+              "range": ["red", "grey", "green", "skyblue", "orange"]  
+            }
+          }
+        },
+        "layer": [
+          {"mark": "line"},
+          {"transform": [
+            {"filter": {"param": "hover", "empty": false}}], "mark": "point"}
+        ]
+      },
+      {
+        "transform": [{"pivot": "country", "value": "count", "groupby": ["datetime"]}],
+        "mark": "rule",
+        "encoding": {
+          "opacity": {
+            "condition": {"value": 0.3, "param": "hover", "empty": false},
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "datetime", "type": "temporal", "title": "Date"},
+            {"field": "us", "type": "quantitative", "title": "United States"},
+            {"field": "ca", "type": "quantitative", "title": "Canada"},
+            {"field": "gb", "type": "quantitative", "title": "Great Britain"},
+            {"field": "de", "type": "quantitative", "title": "Germany"},
+            {"field": "au", "type": "quantitative", "title": "Australia"}
+          ]
+        },
+        "params": [{
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["datetime"],
+            "nearest": true,
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }]
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/4th_july_sightings.csv"
+      },
+        "mark": {
+          "type": "text",
+          "size": 20
+        },
+        "encoding": {
+          "x": {"field": "datetime", "type": "temporal"},
+          "y": {"field": "count", "type": "quantitative"},
+          "text": {"value": "👽"},
+          "tooltip": [
+            {"field": "datetime", "type": "temporal", "title": "Date"},
+            {"field": "count", "type": "quantitative", "title": "4th July US Sightings Reported"}
+        ] 
+        }
+      }
+    ]
+  }
+  
+
+
+  
