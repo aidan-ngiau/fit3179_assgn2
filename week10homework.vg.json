@@ -20,15 +20,24 @@
                     "name": "Minimum Sightings"
             }
         }],
+    "transform": [{"calculate": "toNumber(datum.count)", "as": "count"}],
     "layer": [{
         "mark": "bar",
+        
         "encoding": {
             "x": {"field": "count", "type": "quantitative"},
             "y": {"field": "shape", "type": "nominal", "sort":{
                 "field":"count", 
                 "order": "descending"}
             },
-            "color": {"value": "#aa4326"},
+            "color": {
+                "field": "count",
+                "type": "quantitative",
+                "scale": {
+                  "domain": [0, 6000],
+                  "range": ["lightgrey", "grey", "green"]
+                }
+              },
                 "tooltip": [
                     {"field": "shape", "title": "Shape"},
                     {"field": "count", "title": "Total Sightings Worldwide"}
