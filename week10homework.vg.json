@@ -17,7 +17,7 @@
                     "min": 0,
                     "max": 5000,
                     "step": 500,
-                    "name": "Minimum Sightings"
+                    "name": "Minimum Sightings  "
             }
         }],
     "transform": [{"calculate": "toNumber(datum.count)", "as": "count"}],
