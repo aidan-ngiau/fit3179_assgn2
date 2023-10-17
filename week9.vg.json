@@ -38,7 +38,7 @@
           "color": {
             "field": "UFO Sightings/10,000 Population",
             "type": "quantitative",
-            "scale": {"range": ["white", "grey", "green"]}
+            "scale": {"range": ["#fff4e9",  "#458728", "#006400"], "type": "symlog"}
         },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
