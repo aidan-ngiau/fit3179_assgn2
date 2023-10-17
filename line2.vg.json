@@ -1,6 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "UFO Sightings over 10 Years",
+    "title": {
+      "text": "Reported UFO Sightings over Time",
+      "fontSize": 21},
     "data": {
         "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/sightings_over_time_country.csv"
     },
