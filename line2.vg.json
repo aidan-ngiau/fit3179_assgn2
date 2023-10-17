@@ -43,7 +43,7 @@
         "mark": "line",
         "encoding": {
           "x": {"field": "datetime", "type": "temporal", "axis": {"format": "%b %Y"}, "title": "Date"},
-          "y": {"field": "count", "type": "quantitative"},
+          "y": {"field": "count", "type": "quantitative", "title": "Sightings Reported"},
           "color": {
             "field": "country",
             "type": "nominal",

@@ -25,8 +25,8 @@
         "mark": "bar",
         
         "encoding": {
-            "x": {"field": "count", "type": "quantitative"},
-            "y": {"field": "shape", "type": "nominal", "sort":{
+            "x": {"field": "count", "type": "quantitative", "title": "Total Sightings Worldwide"},
+            "y": {"field": "shape", "type": "nominal", "title": "Shape", "sort":{
                 "field":"count", 
                 "order": "descending"}
             },
