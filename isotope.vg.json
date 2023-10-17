@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "Most Mentioned Animals in UFO Sighting Reports",
+        "text": "Most Mentioned Animals in UFO Reports",
         "subtitle": "1 emoji = 5 mentions",
         "fontSize": 21,
         "subtitleFontSize": 16
