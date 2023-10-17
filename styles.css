@@ -32,6 +32,11 @@ h1, h2, p{
     margin-bottom: 20px;
 }
 
+h3{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
 /* Map container styles */
 #homework_week10_chart, #homework_week9_chart, #isotope_chart, #line_chart{
     display: flex;
