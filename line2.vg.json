@@ -11,11 +11,11 @@
                 "input": "select",
                 "options": [
                     null,
-                    "us",
-                    "ca",
-                    "gb",
-                    "de",
-                    "au"
+                    "United States",
+                    "Canada",
+                    "Great Britain",
+                    "Germany",
+                    "Australia"
                 ],
                 "labels": [
                     "Show All",
@@ -36,55 +36,29 @@
     ],
     "width": 1000,
     "height": 600,
-    "encoding": {"x": {"field": "datetime", "type": "temporal", "axis": {"format": "%b %Y"}, "title": "Date"}},
     "layer": [
-      {
+      {    
+        "mark": "line",
         "encoding": {
-          "y": {"field": "count", "type": "quantitative", "title": "Sightings Reported"},
+          "x": {"field": "datetime", "type": "temporal", "axis": {"format": "%b %Y"}, "title": "Date"},
+          "y": {"field": "count", "type": "quantitative"},
           "color": {
             "field": "country",
             "type": "nominal",
             "title": "Country",
             "scale": {
-              "domain": ["au", "us", "ca", "gb", "de"],  
+              "domain": ["Australia", "United States", "Canada", "Great Britain", "Germany"],  
               "range": ["red", "grey", "green", "skyblue", "orange"]  
             }
-          }
-        },
-        "layer": [
-          {"mark": "line"},
-          {"transform": [
-            {"filter": {"param": "hover", "empty": false}}], "mark": "point"}
-        ]
-      },
-      {
-        "transform": [{"pivot": "country", "value": "count", "groupby": ["datetime"]}],
-        "mark": "rule",
-        "encoding": {
-          "opacity": {
-            "condition": {"value": 0.3, "param": "hover", "empty": false},
-            "value": 0
           },
           "tooltip": [
+            {"field": "country", "type": "nominal", "title": "Country"},
             {"field": "datetime", "type": "temporal", "title": "Date"},
-            {"field": "us", "type": "quantitative", "title": "United States"},
-            {"field": "ca", "type": "quantitative", "title": "Canada"},
-            {"field": "gb", "type": "quantitative", "title": "Great Britain"},
-            {"field": "de", "type": "quantitative", "title": "Germany"},
-            {"field": "au", "type": "quantitative", "title": "Australia"}
+            {"field": "count", "type": "quantitative", "title": "Sightings Reported"}
           ]
-        },
-        "params": [{
-          "name": "hover",
-          "select": {
-            "type": "point",
-            "fields": ["datetime"],
-            "nearest": true,
-            "on": "pointerover",
-            "clear": "pointerout"
-          }
-        }]
+        }
       },
+      
       {
         "data": {
           "url": "https://raw.githubusercontent.com/aidan-ngiau/fit3179_aliendata/main/4th_july_sightings.csv"
