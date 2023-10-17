@@ -78,6 +78,30 @@
             {"field": "count", "type": "quantitative", "title": "4th July US Sightings Reported"}
         ] 
         }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "alphabetic",
+          "dx": -950,
+          "dy": -200,
+          "size": 15,
+          "x": "width",
+          "text": "Alien emojis represent sightings on 4th July, America's Independence Day."
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "alphabetic",
+          "dx": -950,
+          "dy": -170,
+          "size": 15,
+          "x": "width",
+          "text": "Note the disproportionate sightings in US on these days."
+        }
       }
     ]
   }
